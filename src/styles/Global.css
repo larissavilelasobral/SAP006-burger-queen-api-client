@@ -1,0 +1,11 @@
+* { 
+  background-color: transparent;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  border: none;
+  outline: none;
+}
+
+body{
+  background-color: aqua;
+}
