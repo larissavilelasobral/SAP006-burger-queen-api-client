@@ -1,0 +1,15 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+img.logo {
+  height: 25vh;
+  width: 25vh;
+  top: 330px;
+  left: 257px;
+  position: absolute;
+}
+.background {
+  width: 100%;
+}
