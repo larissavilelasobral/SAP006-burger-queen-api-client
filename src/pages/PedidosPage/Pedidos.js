@@ -1,9 +1,9 @@
 import React from 'react'
 
-import { useHistory } from "react-router-dom";
+
 import "./Pedidos.css";
 const Pedidos = () => {
-  const history = useHistory();
+
   return (
     
     <div className="pedidos">

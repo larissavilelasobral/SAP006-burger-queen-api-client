@@ -2,3 +2,47 @@
   background-color: rgba(0, 255, 255, 0);
   color: white;
 }
+input{
+  margin-left: 130px;
+}
+label {
+  margin-left: 130px;
+}
+form{
+  margin-top: 80px;
+}
+.float-label {
+  margin-left: 130px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  min-width: 350px;
+  position: relative;
+}
+
+.float-label input {
+  margin-top: 25px;
+  width: 500px;
+  height: 55px;
+  padding: 14px 16px 0 10px;
+  outline: 0;
+  border-bottom: 3px solid #000000;
+  border-radius: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+.float-label label {
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0 12px;
+  color: #E5E5E5;
+  pointer-events: none;
+  position: absolute;
+  transform: translate(0, 26px) scale(1);
+  transform-origin: top left;
+  transition: all 0.2s ease-out;
+}
+.float-label:focus-within label {
+  transform: translate(0, 12px) scale(0.75);
+}

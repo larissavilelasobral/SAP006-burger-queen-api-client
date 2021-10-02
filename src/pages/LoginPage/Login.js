@@ -1,21 +1,58 @@
-import React from 'react'
+import React, { useState } from "react"
+import { useHistory } from 'react-router-dom';
 import Header from '../../components/HeaderLogin/Header'
 import ButtonLogin from '../../components/ButtonLogin/Button'
-import InputLogin from '../../components/InputLogin/InputLogin'
+import { authLogin } from '../../services/auth'
 
-import { useHistory } from "react-router-dom";
 import "./Login.css";
 
 const Login = () => {
   const history = useHistory();
+  const [email, setEmail] = useState("");
+  const [password, setpassword] = useState("");
+  const item = {email, password}
+  console.log(item.email)
+  console.log(item.password)
+
+  const buttonAuthLogin = (e) => {
+    authLogin(e, {item})
+    .then((result) => {
+      localStorage.setItem('userToke', result.token);
+      localStorage.setItem('userName', result.name);
+      history.push('/home')
+      console.log('Login realizado com sucesso!')
+      console.log(result)
+    })
+    .catch(() => {
+      console.log('Usuárie não encontrado!')
+    })
+  }
   return (
     <div className="containerLogin">
       <Header />
-      <InputLogin />
-      <ButtonLogin />
+      <form>
+        <div className="float-label">
+          <input type="email" onChange={(e) => setEmail(e.target.value)} />
+          <label htmlFor="email">
+            E-mail
+          </label>
+        </div>
+
+        <div className="float-label">
+          <input type="password" onChange={(e) => setpassword(e.target.value)}/>
+          <label htmlFor="password">
+            Senha
+          </label>
+        </div>
+      </form>
+      <ButtonLogin 
+        className = "btn-login"
+        onClick = {(e) => buttonAuthLogin(e, {item})} 
+        children = 'ENTRAR'
+      /> 
       <button className="register-btn" onClick={() => {
       history.push("/register");
-  }}>Ou Registra-se</button> 
+      }}>Ou Registra-se</button> 
     </div>
   )
 }

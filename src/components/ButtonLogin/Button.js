@@ -1,14 +1,10 @@
-import { useHistory } from "react-router-dom";
 import "./Button.css";
 
-const ButtonLogin = (props) => {
-  console.log(props);
-  const history = useHistory();
-
+const ButtonLogin = ({children, className, onClick}) => {
   return (
-    <button classname="btn login" onClick={() => {
-      history.push("/Home");
-  }}>Entrar</button> 
+    <button className={className} onClick={onClick}>
+      {children}
+    </button> 
   );
 };
 
