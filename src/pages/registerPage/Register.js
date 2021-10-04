@@ -15,7 +15,7 @@ const Register = () => {
   const [passwordConfirm, setpasswordConfirm] = useState("");
   const [role, setRole] = useState("");
 
-  const item = {email, password, role, name}
+  const item = {email, password, passwordConfirm, role, name}
   console.log(item.name)
   console.log(item.password)
   console.log(item.role)
@@ -28,9 +28,13 @@ const Register = () => {
       localStorage.setItem('userName', result.name);
       localStorage.setItem('userRole', result.role);
       localStorage.setItem('userEmail', result.email);
-      history.push('/home')
-      console.log('registro realizado com sucesso!')
-      console.log(result)
+      if (passwordConfirm === password){
+        history.push('/home')
+        console.log('registro realizado com sucesso!')
+        console.log(result)
+      } else {
+        console.log('senhas erradas')
+      }
     })
     .catch(() => {
       console.log('Usuárie não encontrado!')

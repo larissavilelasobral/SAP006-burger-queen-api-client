@@ -3,3 +3,27 @@
   width: 500px;
   height: 400px;
 }
+.card-pedido {
+  background-color: #FF8C00;
+  width: 125px;
+  height: 135px;
+  margin: 5px;
+  text-align: center;
+}
+.item-img{
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  border: 2px solid #ffb800
+}
+.titulo {
+  padding-top: 5px;
+}
+.item-price{
+  padding-bottom: 5px;
+}
+.menu-completo {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
