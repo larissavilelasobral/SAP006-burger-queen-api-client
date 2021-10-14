@@ -10,18 +10,16 @@ const Login = () => {
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setpassword] = useState("");
+  
   const item = {email, password}
-  console.log(item.email)
-  console.log(item.password)
 
   const buttonAuthLogin = (e) => {
     authLogin(e, {item})
     .then((result) => {
       localStorage.setItem('userToke', result.token);
       localStorage.setItem('userName', result.name);
-      history.push('/home')
+      history.push('/hall')
       console.log('Login realizado com sucesso!')
-      console.log(result)
     })
     .catch(() => {
       console.log('Usuárie não encontrado!')

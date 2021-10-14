@@ -1,8 +1,8 @@
 import "./Button.css";
 
-const ButtonLogin = ({children, className, onClick}) => {
+const ButtonLogin = ({children, className, onClick, id, btnType}) => {
   return (
-    <button className={className} onClick={onClick}>
+    <button id={id} type={btnType} className={className} onClick={onClick}>
       {children}
     </button> 
   );

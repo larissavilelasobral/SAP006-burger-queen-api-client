@@ -23,9 +23,9 @@ export const authLogin = (e, {item}) => {
 };
 
 export const authRegister = (e, {item}) => {
-  const apiToSignin = 'https://lab-api-bq.herokuapp.com/users'
+  const url = 'https://lab-api-bq.herokuapp.com/users'
   e.preventDefault();
-  const result = fetch(apiToSignin , {
+  const result = fetch(url, {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify ({

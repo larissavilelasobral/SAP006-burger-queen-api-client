@@ -1,8 +1,4 @@
-// import "./Cardapio.css";
-
-import CardPedido from "../components/ItemCard/CardPedido";
-
-export const CardapioCard = () => {
+export const CardapioCard = (categoria) => {
   const token = localStorage.getItem('userToke');
   const url = 'https://lab-api-bq.herokuapp.com/products'
   const result = fetch(url , {
@@ -12,6 +8,8 @@ export const CardapioCard = () => {
       'Authorization': token
     }
     })
-    .then((result) => result.json())
+    .then((result) =>{ 
+      result.filter((item) => item.sub_type === `${categoria}`);
+    })
   return result;
 };

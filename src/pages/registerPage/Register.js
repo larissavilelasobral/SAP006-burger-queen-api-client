@@ -16,10 +16,6 @@ const Register = () => {
   const [role, setRole] = useState("");
 
   const item = {email, password, passwordConfirm, role, name}
-  console.log(item.name)
-  console.log(item.password)
-  console.log(item.role)
-  console.log(item.email)
   
   const buttonAuthRegister = (e) => {
     authRegister(e, {item})
