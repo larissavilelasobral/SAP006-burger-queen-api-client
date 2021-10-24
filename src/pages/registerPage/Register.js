@@ -25,7 +25,7 @@ const Register = () => {
       localStorage.setItem('userRole', result.role);
       localStorage.setItem('userEmail', result.email);
       if (passwordConfirm === password){
-        history.push('/home')
+        history.push('/hall')
         console.log('registro realizado com sucesso!')
         console.log(result)
       } else {

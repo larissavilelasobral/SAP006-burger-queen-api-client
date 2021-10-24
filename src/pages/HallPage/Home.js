@@ -9,8 +9,8 @@ const Home = () => {
     <div className="menu">
       <Header />
       <button className="todos-pedidos-btn" onClick={() => {
-      history.push("/pedidos");
-       }}>Visualizar Pedidos</button> 
+      history.push("/prontos");
+       }}>Visualizar Pedidos Prontos</button> 
       <button className="novo-pedido-btn" onClick={() => {
       history.push("/novo");
       }}>Fazer Novo Pedido</button> 

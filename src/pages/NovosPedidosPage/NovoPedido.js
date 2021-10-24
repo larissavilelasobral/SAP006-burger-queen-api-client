@@ -5,9 +5,11 @@ import { Products } from '../../components/produtos';
 import burger from "../../assets/img/burger.jpg";
 import { Burger } from '../../components/produtos/Burguer';
 import CartItems from '../../components/produtos/CartItems';
-
+import { sendOrderToAPI } from "../../services/order";
 import Input from '../../components/produtos/input';
 import "./NovoPedido.css";
+import { Link } from "react-router-dom";
+import BtnVolta from '../../components/BtnVolta/BtnVolta';
 
 const Menu = () => {
   const [menu, setMenu] = useState(true);
@@ -72,7 +74,8 @@ const Menu = () => {
 
 
   const token = localStorage.getItem("userToke");
-
+  console.log(token)
+  
   useEffect(() => {
     fetch("https://lab-api-bq.herokuapp.com/products", {
       headers: {
@@ -112,19 +115,19 @@ const Menu = () => {
     })
 
    console.log(APIBody)
-  //  sendOrderToAPI(APIBody)
-  //    .then((response) => response.json())
-  //    .then((Json) => {
-  //      console.log(Json)
-  //      if (Json.message) {
-  //        alert('Ocorreu um erro, tente novamente!')
-  //      } else {
-  //        alert('Pedido realizado com sucesso!')
-  //        setOrder([])
-  //        setClientName({ clientName: "" })
-  //        setClienTable({ clientTable: "" })
-  //      }
-  //    })
+   sendOrderToAPI(APIBody)
+     .then((response) => response.json())
+     .then((Json) => {
+       console.log(Json)
+       if (Json.message) {
+         alert('Ocorreu um erro, tente novamente!')
+       } else {
+         alert('Pedido realizado com sucesso!')
+         setOrder([])
+         setClientName({ clientName: "" })
+         setClienTable({ clientTable: "" })
+       }
+     })
   }
 
   return (
@@ -134,20 +137,15 @@ const Menu = () => {
 
         <div className="ready-logout">
 
-          {/* <Link to="/orders">
-            <Button
-              className="pedidos-prontos"
-              children="Pedidos prontos"
-            />
-          </Link> */}
+          <BtnVolta className="btn-pronto"/>
 
-          {/* <Link to="/login">
-            <Button
+          { <Link to="/">
+            <ButtonLogin
               onClick={() => localStorage.clear()}
               className="logout"
               children="Sair "
             />
-          </Link> */}
+          </Link> }
         </div>
       </div>
    

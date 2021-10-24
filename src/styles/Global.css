@@ -10,3 +10,19 @@
 body{
   background-color: #535659;
 }
+.table{
+  color: #FF8C00;
+  margin-left: 10px;
+}
+.nome{
+  margin-left: 10px;
+  margin-top: 3px;
+  margin-right: 10px;
+  color: #4c4131;
+}
+span{
+  font-size:20px;
+}
+.btn-pronto{
+  height: 45px;
+}
