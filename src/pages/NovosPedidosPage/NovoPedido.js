@@ -77,7 +77,8 @@ const Menu = () => {
   console.log(token)
   
   useEffect(() => {
-    fetch("https://lab-api-bq.herokuapp.com/products", {
+    const urlProducts = "https://lab-api-bq.herokuapp.com/products";
+    fetch(urlProducts, {
       headers: {
         accept: "application/json",
         Authorization: `${token}`,
@@ -108,19 +109,17 @@ const Menu = () => {
       }
     })
 
-    const APIBody = ({
+    const infoApiBody = ({
       "client": clientName.clientName,
       "table": clientTable.clientTable,
       "products": orderProducts
     })
 
-   console.log(APIBody)
-   sendOrderToAPI(APIBody)
+   sendOrderToAPI(infoApiBody)
      .then((response) => response.json())
      .then((Json) => {
-       console.log(Json)
        if (Json.message) {
-         alert('Ocorreu um erro, tente novamente!')
+         alert('Error! Tente novamente!')
        } else {
          alert('Pedido realizado com sucesso!')
          setOrder([])
@@ -135,7 +134,7 @@ const Menu = () => {
 
       <div className="inicio">
 
-        <div className="ready-logout">
+        <div>
 
           <BtnVolta className="btn-pronto"/>
 
@@ -211,8 +210,7 @@ const Menu = () => {
             </div>
           ) : (
             <div className="all-day-menu">
-              {/* <Cardapio burgers={burgers} /> */}
-              <h3 className="topics">  Hambúrguer Simples </h3>
+              <h3 className="topics"> Hambúrguer Simples </h3>
               <div className="hamburguers">
                 <img src={burger} className="img-burger" alt="burger" />
                 <div className="options-burger">
@@ -392,11 +390,9 @@ const Menu = () => {
               {order &&
                 order.map((item) => {
                   totalCost = totalCost + Number(item.itemPrice) * item.itemQtd;
-                  // console.log(totalCost)
                   return (
                     <>
                       <CartItems
-                        // itemNameKey={item.itemNameKey}
                         itemName={item.itemName}
                         itemPrice={item.itemPrice}
                         itemQtd={item.itemQtd}

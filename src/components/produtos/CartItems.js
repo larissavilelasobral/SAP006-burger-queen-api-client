@@ -1,5 +1,4 @@
 const CartItems = ({
-  itemNameKey,
   itemName,
   itemPrice,
   itemQtd,
@@ -7,7 +6,6 @@ const CartItems = ({
   itemComplement,
   onClickAdd,
   onClickRemove,
-  onClickDelete,
 }) => {
   return (
     <article className="menu-carrinho">

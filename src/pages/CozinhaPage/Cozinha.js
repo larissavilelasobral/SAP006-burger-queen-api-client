@@ -4,7 +4,6 @@ import OrdersArea from '../../components/orders/Area';
 import OrdersCozinha from '../../components/orders/OrdersCozinha';
 import OrdersProducts from '../../components/orders/produtos';
 import ButtonLogin from '../../components/ButtonLogin/Button';
-import OrdersMsg from '../../components/orders/modal';
 import BtnVolta from '../../components/BtnVolta/BtnVolta';
 
 import {
@@ -70,9 +69,7 @@ function Cozinha() {
           </OrdersArea>
 
         ) : (
-        <OrdersMsg>
-          Mas louça suja temos bastante.
-        </OrdersMsg>
+        console.log('carregando')
         )}
       </div>
     </>

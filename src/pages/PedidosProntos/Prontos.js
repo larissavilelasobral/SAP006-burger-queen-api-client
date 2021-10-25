@@ -3,7 +3,7 @@ import OrdersArea from '../../components/orders/Area';
 import OrdersKitchen from '../../components/orders/OrdersCozinha';
 import OrdersProducts from '../../components/orders/produtos';
 import ButtonLogin from '../../components/ButtonLogin/Button';
-import OrdersMsg from '../../components/orders/modal';
+
 import {
   requestAllOrders, changeStatusSallon, btnStatusSaloon,
 } from '../../services/ordersSer';
@@ -19,7 +19,6 @@ function OrdersSaloon() {
         return setOrdersDone(allOrders);
       });
   };
-
   useEffect(() => {
     filterOrdersDone();
   }, []);
@@ -65,11 +64,7 @@ function OrdersSaloon() {
         </OrdersArea>
 
       ) : (
-        <OrdersMsg
-          
-        >
-          Não se preocupe, temos um salão inteiro para você limpar.
-        </OrdersMsg>
+        console.log('carregando')
       ) }
 
     </>

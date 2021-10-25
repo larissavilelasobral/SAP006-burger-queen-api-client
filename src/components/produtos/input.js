@@ -1,5 +1,4 @@
 import React from "react";
-// import ReactDOM from 'react-dom';
 
 const Input = ({ name, type, placeholder, value, onChange, className, }) => {
   return (

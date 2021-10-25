@@ -1,9 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 
-const portalRoot = document.getElementById('portal-root');
-
-function ModalMsg({
+function cardOrderContainer({
   msg, children, isOpen, onclick,
 }) {
   if (!isOpen) {
@@ -20,9 +18,7 @@ function ModalMsg({
         </content>
       </overlay>
     </>,
-    portalRoot,
-
   );
 }
 
-export default ModalMsg;
+export default cardOrderContainer;

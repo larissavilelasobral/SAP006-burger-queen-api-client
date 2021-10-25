@@ -27,7 +27,6 @@ const Register = () => {
       if (passwordConfirm === password){
         history.push('/hall')
         console.log('registro realizado com sucesso!')
-        console.log(result)
       } else {
         console.log('senhas erradas')
       }
@@ -78,6 +77,9 @@ const Register = () => {
         onClick = {(e) => buttonAuthRegister(e, {item})} 
         children = 'Fazer Login'
       /> 
+      <button className="register-btn" onClick={() => {
+      history.push("/");
+      }}>Volta</button> 
     </div>
   )
 }

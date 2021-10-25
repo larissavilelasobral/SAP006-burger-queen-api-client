@@ -1,9 +1,8 @@
-
 const token = localStorage.getItem('userToke');
-const apiRequestOrders = 'https://lab-api-bq.herokuapp.com/orders';
+const urlOrders = 'https://lab-api-bq.herokuapp.com/orders';
 
 export const requestAllOrders = () => {
-  const result = fetch(`${apiRequestOrders}`, {
+  const result = fetch(`${urlOrders}`, {
     headers: {
       accept: 'application/json',
       Authorization: `${token}`,
@@ -48,7 +47,7 @@ const putRequest = (status) => {
 };
 
 const changeStatusAPI = (id, status) => (
-  fetch(`${apiRequestOrders}/${id}`, putRequest(status))
+  fetch(`${urlOrders}/${id}`, putRequest(status))
     .then((response) => response.json())
 );
 
@@ -65,11 +64,6 @@ export const changeStatusBtn = (id, status) => {
   }
 };
 
-// export const convertTime = (convertDate) => {
-//   const time = new Date().toLocaleDateString('pt-br');
-// };
-
-// Sallon services
 export const btnStatusSaloon = (status) => {
   switch (status) {
     case 'ready':
@@ -112,6 +106,6 @@ const requestDeleteOrder = (id) => {
 };
 
 export const deleteOrder = (id) => (
-  fetch(`${apiRequestOrders}/${id}`, requestDeleteOrder(id))
+  fetch(`${urlOrders}/${id}`, requestDeleteOrder(id))
     .then((response) => response.json())
 );

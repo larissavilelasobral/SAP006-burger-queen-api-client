@@ -2,7 +2,6 @@ import React from "react";
 import "../ItemCard/CardPedido.css"
 
 const CardPedido = (props) => {
-  console.log(props)
   return (
     <div className="card">
       <div>
@@ -10,7 +9,7 @@ const CardPedido = (props) => {
           <div className="card-body">
             <h2 className="card-title">{props.name}</h2>
             <h2 className="card-price">{props.price}</h2>
-            <button className="btn-success">Add to Cart</button>
+            <button className="btn-success">Adicionar ao Carrinho</button>
           </div>
       </div>
     </div>
