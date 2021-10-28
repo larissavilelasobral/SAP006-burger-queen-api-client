@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Cozinha.css';
-import OrdersArea from '../../components/orders/Area';
+import ContainerPedidos from '../../components/orders/ContainerPedidos';
 import OrdersCozinha from '../../components/orders/OrdersCozinha';
 import OrdersProducts from '../../components/orders/produtos';
 import ButtonLogin from '../../components/ButtonLogin/Button';
@@ -15,7 +15,6 @@ function Cozinha() {
   console.log(orders)
 
   const filterOrders = () => {
-    console.log('função de carregar orders')
     requestAllOrders()
       .then((json) => {
         const allOrders = json.filter((item) => item.status === 'processing' || item.status === 'pending');
@@ -32,8 +31,8 @@ function Cozinha() {
     <BtnVolta className="btn-pronto"/>
       <div className="container-Cozinha">
         {orders.length > 0 ? (
-          <OrdersArea
-            msg="Pedidos"
+          <ContainerPedidos
+            msg="Cozinha"
           >
             {orders.map((item, index) => (
               <OrdersCozinha
@@ -66,7 +65,7 @@ function Cozinha() {
                 </ButtonLogin>
               </OrdersCozinha>
             ))}
-          </OrdersArea>
+          </ContainerPedidos>
 
         ) : (
         console.log('carregando')

@@ -13,3 +13,16 @@ img.logo {
 .background {
   width: 100%;
 }
+@media only screen and (min-width: 1024px) {
+  * {
+    padding: 0px;
+    margin: 0px;
+  }
+  img.logo {
+    height: 25vh;
+    width: 25vh;
+    top: 330px;
+    left: 277px;
+    position: absolute;
+  }
+}

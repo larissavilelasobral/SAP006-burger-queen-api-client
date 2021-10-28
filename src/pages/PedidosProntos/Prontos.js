@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import OrdersArea from '../../components/orders/Area';
+import ContainerPedidos from '../../components/orders/ContainerPedidos';
 import OrdersKitchen from '../../components/orders/OrdersCozinha';
 import OrdersProducts from '../../components/orders/produtos';
 import ButtonLogin from '../../components/ButtonLogin/Button';
@@ -27,7 +27,7 @@ function OrdersSaloon() {
     <>
       <BtnVolta className="btn-pronto"/>
       {ordersDone.length > 0 ? (
-        <OrdersArea
+        <ContainerPedidos
           msg="Pedidos Prontos"
         >
           {ordersDone.map((item, index) => (
@@ -61,7 +61,7 @@ function OrdersSaloon() {
               </ButtonLogin>
             </OrdersKitchen>
           ))}
-        </OrdersArea>
+        </ContainerPedidos>
 
       ) : (
         console.log('carregando')

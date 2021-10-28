@@ -67,8 +67,8 @@ const Register = () => {
         </div>
 
         <div onChange={(e) => setRole(e.target.value)}>
-          <input type="radio" value="kitchen" name="kitchen"/> Cozinha
-          <input type="radio" value="room" name="room"/> Salão
+          <input type="radio" className="radio" value="kitchen" name="kitchen"/> Cozinha
+          <input type="radio" className="radio" value="room" name="room"/> Salão
         </div>
       </form>
       

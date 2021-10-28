@@ -2,3 +2,11 @@
   background-color: rgba(0, 255, 255, 0);
   color: white;
 }
+button{
+  margin-left: 150px;
+}
+.radio{
+  margin-left: 150px;
+  height: 24px;
+  width: 30px;
+}

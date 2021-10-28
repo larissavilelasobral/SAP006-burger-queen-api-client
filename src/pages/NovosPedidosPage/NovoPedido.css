@@ -84,17 +84,38 @@ p {
   margin-left: 30px;
 }
 .client{
-  height: 40px;
+  height: 50px;
   width: 500px;
   background-color: white;
   font-size: 30px;
+  margin-left: 150px;
+  border: 3px solid #00000061;
 }
 .mesa{
-  height: 40px;
+  height: 50px;
   width: 100px;
   margin-top: 10px;
   background-color: white;
   font-size: 30px;
+  margin-left: 150px;
+  border: 3px solid #00000061;
+}
+.btn-voltar{
+  background-color: #ff590000;
+  color: white;
+  width: 173px;
+  height: 50px;
+  border: 1px solid #7a7777;
+  border-radius: 50px;
+}
+
+.logout{
+  background-color: #ff590000;
+  color: white;
+  width: 173px;
+  height: 50px;
+  border: 1px solid #7a7777;
+  border-radius: 50px;
 }
 .caixa-menu{
   margin-left: 20px;
@@ -117,6 +138,9 @@ img.img-burger {
 .menu-carrinho{
   background-color: rgb(88, 88, 88);
 }
+/* button {
+  margin-left: 0px;
+} */
 .p-btn-items button{
   height: 41px;
   width: 41px;

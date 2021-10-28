@@ -6,7 +6,7 @@ import burger from "../../assets/img/burger.jpg";
 import { Burger } from '../../components/produtos/Burguer';
 import CartItems from '../../components/produtos/CartItems';
 import { sendOrderToAPI } from "../../services/order";
-import Input from '../../components/produtos/input';
+import Input from '../../components/input/input';
 import "./NovoPedido.css";
 import { Link } from "react-router-dom";
 import BtnVolta from '../../components/BtnVolta/BtnVolta';
@@ -72,10 +72,7 @@ const Menu = () => {
     }
   }
 
-
   const token = localStorage.getItem("userToke");
-  console.log(token)
-  
   useEffect(() => {
     const urlProducts = "https://lab-api-bq.herokuapp.com/products";
     fetch(urlProducts, {
@@ -136,12 +133,12 @@ const Menu = () => {
 
         <div>
 
-          <BtnVolta className="btn-pronto"/>
+          <BtnVolta className="btn-voltar btnOP"/>
 
           { <Link to="/">
             <ButtonLogin
               onClick={() => localStorage.clear()}
-              className="logout"
+              className="logout btnOP"
               children="Sair "
             />
           </Link> }
